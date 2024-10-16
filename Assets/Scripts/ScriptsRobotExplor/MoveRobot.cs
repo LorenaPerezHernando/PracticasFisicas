@@ -29,6 +29,8 @@ public class MoveRobot : MonoBehaviour
                 puntoExplorar = puntodestino;
             }
 
+            
+
 
         }
     }
@@ -43,7 +45,7 @@ public class MoveRobot : MonoBehaviour
         {
             print("Objeto detectado");
             //transform.Translate(puntoExplorar * Time.deltaTime);
-            transform.position = Vector3.Lerp ( transform.position, puntoExplorar, Time.deltaTime/2 );
+            transform.position = Vector3.Lerp ( transform.position, puntoExplorar, Time.deltaTime/2);
             if(Vector3.Distance(transform.position, puntoExplorar) < 3)
                 seguirExplorando=true;
             
