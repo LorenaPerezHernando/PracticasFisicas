@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class OnCollisionJump : MonoBehaviour
 {
+    #region Properties & Fields
+    //Platform that helps player jump
     private int _verticalForce;
     public int minForce;
     public int maxForce;
 
+
+    #endregion
+
+    #region Unity Callbacks
     private void OnCollisionEnter(Collision collision)
     {
         _verticalForce = Random.Range(minForce, maxForce);
@@ -18,6 +24,8 @@ public class OnCollisionJump : MonoBehaviour
 
             Destroy(gameObject, 1);
         }
+
     }
+    #endregion
 
 }

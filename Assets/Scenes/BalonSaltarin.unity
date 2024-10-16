@@ -452,6 +452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 480054828691495118, guid: a299ec00b71699342931f0819ec2762f, type: 3}
+      propertyPath: m_TagString
+      value: Jumps
+      objectReference: {fileID: 0}
     - target: {fileID: 1827211295525521266, guid: a299ec00b71699342931f0819ec2762f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1095,7 +1099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1052269005}
-  horizontalForce: 300
+  horizontalForce: 20
+  isGrounded: 0
 --- !u!1 &1540588398
 GameObject:
   m_ObjectHideFlags: 0

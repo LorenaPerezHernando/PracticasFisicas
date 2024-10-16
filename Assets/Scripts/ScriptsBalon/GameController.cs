@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
         playerPosStart = GameObject.FindGameObjectWithTag("Player").transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    private void FixedUpdate()
+    void Update()
     {
         t_puntuacion.text = "Puntuación: " + puntuacion;
     }
@@ -45,12 +45,12 @@ public class GameController : MonoBehaviour
 
     public void RestartScene()
     {
-        player.transform.position = playerPosStart;
+        player.transform.position = new Vector3(playerPosStart.x, playerPosStart.y + 1, playerPosStart.z);
         buttonRestart.SetActive(false);
         i = 0; x = 0;
         puntuacion = 0; 
-        CreateMoreJumps(); 
-        player.GetComponent<Move>().StartMoving();
+        CreateMoreJumps();
+
     }
 
 }

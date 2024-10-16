@@ -6,21 +6,27 @@ public class Move : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     public int horizontalForce;
+    [SerializeField] bool isGrounded; 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
     private void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.tag == "Floor")
-        {
-            StartMoving();
-        }
+            isGrounded = true;
+
+        else
+            isGrounded = false;
+
     }
-   public void StartMoving()
+    private void FixedUpdate()
     {
-        rb.AddForce(Vector3.right * horizontalForce);
+        if(isGrounded)
+            rb.AddForce(Vector3.right * horizontalForce);
     }
+
 }
